@@ -1,0 +1,39 @@
+title: Shop
+size: 27
+
+# CROWN
+# GLOW
+# CHAT_COLOR
+# NICKNAME_PAINT
+# TITLE
+# TITLE_PAINT
+# lowercase!!!
+items:
+  blank:
+    itemsadderID: ''
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    amount: 1
+    data: 0
+    displayname: ' '
+    slots: -1
+    lore:
+      - ''
+  page-crown:
+    itemsadderID: ''
+    material: GOLDEN_HELMET
+    amount: 1
+    data: 0
+    displayname: <color:red>Crowns
+    slots: 11
+    lore:
+      - <color:gray>Click to open crowns
+  page-glow:
+    itemsadderID: ''
+    material: GOLDEN_HELMET
+    amount: 1
+    data: 0
+    displayname: <color:red>Glows
+    slots: 12
+    lore:
+      - <color:gray>Click to open Glows
+# ... add other ones yourself.

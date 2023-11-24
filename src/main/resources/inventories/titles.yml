@@ -1,0 +1,151 @@
+title: Shop
+size: 27
+items:
+  blank:
+    itemsadderID: ''
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    amount: 1
+    data: 0
+    displayname: ' '
+    slots: -1
+    lore:
+      - ''
+  back:
+    itemsadderID: ''
+    material: RED_TERRACOTTA
+    amount: 1
+    data: 0
+    displayname: <color:red>Go back
+    slots: 0
+    lore:
+      - <color:gray>Click to go back
+
+  cosmeticItem0:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 10
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem1:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 11
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem2:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 12
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem3:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 13
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem4:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 14
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem5:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 15
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem6:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 16
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem7:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 17
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem8:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 18
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem9:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 19
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem10:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 20
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem11:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 21
+    lore:
+      - <color:yellow>Click to purchase for %price%
+
+  cosmeticItem12:
+    itemsadderID: ''
+    material: BARRIER
+    amount: 1
+    data: 0
+    displayname: ''
+    slots: 22
+    lore:
+      - <color:yellow>Click to purchase for %price%

@@ -1,0 +1,30 @@
+title: Are you sure?
+size: 27
+items:
+  blank:
+    itemsadderID: ''
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    amount: 1
+    data: 0
+    displayname: ' '
+    slots: -1
+    lore:
+      - ''
+  confirm:
+    itemsadderID: ''
+    material: LIME_TERRACOTTA
+    amount: 1
+    data: 0
+    displayname: <gradient:#0061ff:#60efff>Confirm</gradient>
+    slots: 11
+    lore:
+      - <color:gray>Click to confirm purchase
+  decline:
+    itemsadderID: ''
+    material: RED_TERRACOTTA
+    amount: 1
+    data: 0
+    displayname: <color:red>Cancel
+    slots: 15
+    lore:
+      - <color:gray>Click to cancel

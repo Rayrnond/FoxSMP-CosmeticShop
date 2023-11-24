@@ -1,0 +1,15 @@
+name: CosmeticShop
+version: '${project.version}'
+main: com.reflexian.cosmeticshop.CosmeticShop
+api-version: '1.19'
+load: STARTUP
+author: Raymond
+website: 'https://reflexian.com'
+depend:
+  - LevityCosmetics
+  - ItemsAdder
+  - PlayerPoints
+softdepend:
+  - PlaceholderAPI
+commands:
+  cosmeticshopopen:
