@@ -17,6 +17,7 @@ public class BundledShop {
     private final LinkedList<BundledCosmetic> T2 = new LinkedList<>();
     private final LinkedList<BundledCosmetic> T3 = new LinkedList<>();
     private final LinkedList<BundledCosmetic> T4 = new LinkedList<>();
+    private final LinkedList<BundledCosmetic> T5 = new LinkedList<>();
 
     private boolean shuffled = false;
 
@@ -29,6 +30,7 @@ public class BundledShop {
     public LinkedList<BundledCosmetic> getAll(){
         if (!shuffled) {
             Collections.shuffle(T4);
+            Collections.shuffle(T5);
             shuffled = true;
         }
 //        Bukkit.broadcastMessage("T1: " + T1.size());
@@ -40,6 +42,7 @@ public class BundledShop {
             addAll(T2);
             addAll(T3);
             addAll(T4);
+            addAll(T5);
         }};
     }
 
@@ -48,6 +51,7 @@ public class BundledShop {
         T2.removeIf(BundledCosmetic::isHot);
         T3.removeIf(BundledCosmetic::isHot);
         T4.removeIf(BundledCosmetic::isHot);
+        T5.removeIf(BundledCosmetic::isHot);
         shuffled = false;
     }
 }

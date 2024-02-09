@@ -70,7 +70,7 @@ public class InvLang {
                     s1=s1.replace("%name%", String.valueOf(cosmetic.getCosmetic().getName()));
                     s1=s1.replace("%displayName%", String.valueOf(cosmetic.getCosmetic().getItemStack().getItemMeta().getDisplayName()));
                     s1=s1.replace("%rarity%", String.valueOf(cosmetic.getCosmetic().getRarity()));
-                    s1=s1.replace("%price%", String.valueOf(cosmetic.getPrice()));
+                    s1=s1.replace("%price%", String.valueOf(((int) cosmetic.getPrice())));
                     s1=s1.replace("%type%", cosmetic.getCosmetic().getType().name());
                     s1=s1.replace("%timeLeft%", CosmeticShop.getInstance().getConverter().formattedUntilExpires(cosmetic.isHot()));
                 } else {

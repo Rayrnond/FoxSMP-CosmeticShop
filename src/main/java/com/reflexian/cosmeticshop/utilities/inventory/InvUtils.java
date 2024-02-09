@@ -86,7 +86,7 @@ public class InvUtils {
                                 if (clickAction.isDisabled()&&clickAction.getId().equals(key)) continue numberloop;
                             }
                             BundledCosmetic cos;
-                            if (key.startsWith("cosmeticItem")) {
+                            if (key.startsWith("cosmeticItem") && !cosmetic.isEmpty()) {
                                 cos = cosmetic.get(Integer.parseInt(key.replace("cosmeticItem","")));
                             } else {
                                 cos = null;

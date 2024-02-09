@@ -6,6 +6,7 @@ import com.reflexian.cosmeticshop.utilities.BundledCosmetic;
 import com.reflexian.cosmeticshop.utilities.inventory.ClickAction;
 import com.reflexian.cosmeticshop.utilities.inventory.InvUtils;
 import com.reflexian.cosmeticshop.utilities.inventory.Inventory;
+import com.reflexian.levitycosmetics.data.objects.cosmetics.hat.LCrown;
 import com.reflexian.levitycosmetics.data.objects.cosmetics.helpers.Cosmetic;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -34,7 +35,9 @@ public class ConfirmationInventory implements Inventory {
     @Override
     public void init(Player player) {
         final LinkedList<BundledCosmetic> cosmetics = new LinkedList<>();
-        if (cosmetic != null) cosmetics.add(cosmetic);
+        if (cosmetic != null) {
+            cosmetics.add(cosmetic);
+        }
         InvUtils.showInventory(player, "confirmation", cosmetics,
                 new ClickAction("confirm", (p, clickAction) -> {
                     p.closeInventory();
@@ -65,6 +68,9 @@ public class ConfirmationInventory implements Inventory {
                 }),
                 new ClickAction("decline", (p, clickAction) -> {
                     p.closeInventory();
+                }),
+                new ClickAction("cosmeticItem0", (p, clickAction) -> {
+
                 })
                 );
     }

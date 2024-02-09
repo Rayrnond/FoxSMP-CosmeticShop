@@ -18,10 +18,12 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import static com.reflexian.levitycosmetics.data.objects.cosmetics.CosmeticType.*;
+
 @Getter
 public class ConverterImpl implements Converter {
 
-    final List<CosmeticType> validTypes = Arrays.asList(CosmeticType.HAT,CosmeticType.CROWN,CosmeticType.GLOW,CosmeticType.CHAT_COLOR,CosmeticType.NICKNAME_PAINT,CosmeticType.TITLE);
+    final List<CosmeticType> validTypes = Arrays.asList(CosmeticType.HAT,CosmeticType.CROWN,CosmeticType.GLOW,CosmeticType.CHAT_COLOR,CosmeticType.NICKNAME_PAINT,CosmeticType.TITLE,CosmeticType.TITLE_PAINT,CosmeticType.TAB_COLOR,JOIN_MESSAGE);
     private final PlayerPointsAPI playerPointsAPI;
 
     public ConverterImpl(){
@@ -62,7 +64,17 @@ public class ConverterImpl implements Converter {
         if (CosmeticShop.getDEFAULT_CONFIG().getReverseBlacklist()) {
             cosmetics.removeIf(e->!blacklist.contains(e));
         } else {
+            for (String s : CosmeticShop.getDEFAULT_CONFIG().getBlacklist()) {
+//                if (blacklist.contains(s)) {
+//                    System.out.println("Blacklist contains " + s);
+//                } else {
+//                    System.out.println("Blacklist does not contain " + s);
+//                }
+                cosmetics.removeIf(e->e.equalsIgnoreCase(s));
+            }
+//            System.out.println("Blacklist size: " + blacklist.size());
             cosmetics.removeIf(blacklist::contains);
+//            System.out.println("After size: " + cosmetics.size());
         }
 
         return cosmetics;
@@ -159,12 +171,22 @@ public class ConverterImpl implements Converter {
 
                 double cost = config.getOverride().getOrDefault(cosmetic.getName(), config.getCosts().getOrDefault(cosmetic.getRarity()+"", 1000));
 
+                if (validType == CosmeticType.CROWN) {
+                    if (cosmetic.getType() == CosmeticType.CROWN) {
+                        if (cosmetic.getRarity() == 1 && bundledShop.getT1().isEmpty()) {
+                            bundledShop.getT1().add(new BundledCosmetic(cosmetic, cost, hot,false));
+                        } else if (cosmetic.getRarity() == 2 && bundledShop.getT2().isEmpty()) {
+                            bundledShop.getT2().add(new BundledCosmetic(cosmetic, cost, hot,false));
+                        }
+                        continue;
+                    }
+                }
 
                 if (validType == CosmeticType.TITLE) {
 
                     if (cosmetic.getType() == CosmeticType.TITLE) {
-                        if (bundledShop.getT4().size()>=8) continue;
-                        bundledShop.getT4().add(new BundledCosmetic(cosmetic, cost, hot,false));
+                        if (bundledShop.getT5().size()>=7) continue;
+                        bundledShop.getT5().add(new BundledCosmetic(cosmetic, cost, hot,false));
                         continue;
                     }
 
@@ -176,7 +198,9 @@ public class ConverterImpl implements Converter {
                     bundledShop.getT2().add(new BundledCosmetic(cosmetic, cost, hot,false));
                 } else if (cosmetic.getRarity() == 3 && bundledShop.getT3().size() < 2) {
                     bundledShop.getT3().add(new BundledCosmetic(cosmetic, cost, hot,false));
-                } else {
+                } else if (cosmetic.getType() == TITLE_PAINT && cosmetic.getRarity() == 4 && bundledShop.getT4().size() < 2) {
+                    bundledShop.getT4().add(new BundledCosmetic(cosmetic, cost, hot,false));
+                } else if (cosmetic.getType() != TITLE_PAINT && cosmetic.getType() != TITLE && cosmetic.getRarity() == 4) {
                     if (bundledShop.getT4().size()>=8 || (validType==CosmeticType.TITLE && cosmetic.getType()!=CosmeticType.TITLE)) continue;
                     bundledShop.getT4().add(new BundledCosmetic(cosmetic, cost, hot,false));
                 }

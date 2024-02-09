@@ -28,3 +28,12 @@ items:
     slots: 15
     lore:
       - <color:gray>Click to cancel
+  cosmeticItem0:
+    itemsadderID: ''
+    material: NAME_TAG
+    amount: 1
+    data: 0
+    displayname: '<color:yellow>Nickname Ticket'
+    slots: 13
+    lore:
+      - ''

@@ -36,6 +36,7 @@ public final class CosmeticShop extends JavaPlugin {
         checkInvFile("confirmation.yml");
         checkInvFile("nicknames.yml");
         checkInvFile("titles.yml");
+        checkInvFile("crowns.yml");
 
         inventoryManager = new InventoryManager(this);
         inventoryManager.init();
@@ -45,7 +46,7 @@ public final class CosmeticShop extends JavaPlugin {
         converter = new ConverterImpl();
 
         this.loadConfigs();
-        getCommand("cosmeticshopopen").setExecutor(new ShopCommand());
+        getCommand("cosmetics").setExecutor(new ShopCommand());
     }
 
     @Override

@@ -32,8 +32,6 @@ public class ShopCategoryInventory implements Inventory {
         int i = 0;
 
         LinkedList<BundledCosmetic> cosmetics = CosmeticShop.getInstance().getConverter().getTodayCosmetics(cosmeticType);
-//        cosmetics.sort(Comparator.comparingInt(o -> o.getCosmetic().getRarity()));
-
 
         for (BundledCosmetic todayCosmetic : cosmetics) {
             actions.add(new ClickAction("cosmeticItem"+i, (p, clickAction) -> new ConfirmationInventory(todayCosmetic).init(p)));
@@ -51,7 +49,8 @@ public class ShopCategoryInventory implements Inventory {
         String page = "page";
         if (cosmeticType == CosmeticType.TITLE) page = "titles";
         else if (cosmeticType == CosmeticType.NICKNAME_PAINT) page = "nicknames";
+        else if (cosmeticType == CosmeticType.CROWN) page = "crowns";
 
-        InventoryProvider provider = InvUtils.showInventory(player,page, cosmetics, actions.toArray(new ClickAction[0]));
+        InventoryProvider provider = InvUtils.showInventory(player, page, cosmetics, actions.toArray(new ClickAction[0]));
     }
 }

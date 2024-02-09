@@ -12,4 +12,6 @@ depend:
 softdepend:
   - PlaceholderAPI
 commands:
-  cosmeticshopopen:
+  cosmetics:
+    aliases:
+      - cosmeticshop
